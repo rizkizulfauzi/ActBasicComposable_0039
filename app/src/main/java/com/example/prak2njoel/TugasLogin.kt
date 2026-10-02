@@ -67,4 +67,19 @@ fun TugasLogin(modifier: Modifier = Modifier) {
                     color = Color.LightGray
                 )
             }
+            // Logo / Gambar Putih Atas (Diperbesar menjadi 130.dp)
+            Box(
+                modifier = Modifier
+                    .size(130.dp)
+                    .clip(CircleShape)
+                    .background(Color.White),
+                contentAlignment = Alignment.Center
+            ) {
+                Image(
+                    painter = topLogoImage,
+                    contentDescription = "Logo Atas",
+                    contentScale = ContentScale.Crop,
+                    modifier = Modifier.fillMaxSize()
+                )
+            }
         }
