@@ -67,10 +67,10 @@ fun TugasLogin(modifier: Modifier = Modifier) {
                     color = Color.LightGray
                 )
             }
-            // Logo / Gambar Putih Atas (Diperbesar menjadi 130.dp)
+            // Logo / Gambar Putih Atas (Toplogo - ukuran sedang, misal 110.dp)
             Box(
                 modifier = Modifier
-                    .size(130.dp)
+                    .size(110.dp)
                     .clip(CircleShape)
                     .background(Color.White),
                 contentAlignment = Alignment.Center
@@ -105,10 +105,10 @@ fun TugasLogin(modifier: Modifier = Modifier) {
                     color = Color.White
                 )
             }
-            // Bottom Circular Profile Image (Dinaikkan lebih ke atas)
+            // Bottom Circular Profile Image (Diperbesar menjadi 170.dp agar lebih besar dari toplogo)
             Box(
                 modifier = Modifier
-                    .size(130.dp)
+                    .size(180.dp)
                     .clip(CircleShape)
                     .background(Color.White),
                 contentAlignment = Alignment.Center
@@ -124,4 +124,3 @@ fun TugasLogin(modifier: Modifier = Modifier) {
         }
     }
 }
-
