@@ -19,33 +19,37 @@ import androidx.compose.ui.unit.sp
 @Composable
 fun TugasLogin(modifier: Modifier = Modifier) {
     val bgImage = painterResource(id = R.drawable.background)
-
+    
     // 1. Gambar Profil Bawah
     val profileImage = painterResource(id = R.drawable.profilku)
 
     // 2. Gambar Putih Atas / Logo (Toplogo)
     val topLogoImage = painterResource(id = R.drawable.toplogo)
 
+    // Root Box menggunakan fillMaxSize() agar background menutupi seluruh layar (Edge-to-Edge sampai ke gambar baterai/status bar)
     Box(
-        modifier = modifier
-            .fillMaxSize()
+        modifier = Modifier.fillMaxSize()
     ) {
-        // Background image
+        // Background image full screen sampai ke atas
         Image(
             painter = bgImage,
             contentDescription = null,
             contentScale = ContentScale.Crop,
             modifier = Modifier.fillMaxSize()
         )
+
         // Darker overlay for contrast
         Box(
             modifier = Modifier
                 .fillMaxSize()
                 .background(Color.Black.copy(alpha = 0.6f))
         )
+
+        // Column konten diberi systemBarsPadding() agar teks/logo tidak tertutup status bar (baterai/jam) & navigation bar bawah
         Column(
             modifier = Modifier
                 .fillMaxSize()
+                .systemBarsPadding()
                 .padding(horizontal = 24.dp, vertical = 12.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.SpaceBetween
@@ -67,7 +71,8 @@ fun TugasLogin(modifier: Modifier = Modifier) {
                     color = Color.LightGray
                 )
             }
-            // Logo / Gambar Putih Atas (Toplogo - ukuran sedang, misal 110.dp)
+
+            // Logo / Gambar Putih Atas
             Box(
                 modifier = Modifier
                     .size(110.dp)
@@ -82,6 +87,7 @@ fun TugasLogin(modifier: Modifier = Modifier) {
                     modifier = Modifier.fillMaxSize()
                 )
             }
+
             // User Info: Nama & NIM
             Column(horizontalAlignment = Alignment.CenterHorizontally) {
                 Text(
@@ -105,10 +111,11 @@ fun TugasLogin(modifier: Modifier = Modifier) {
                     color = Color.White
                 )
             }
-            // Bottom Circular Profile Image (Diperbesar menjadi 170.dp agar lebih besar dari toplogo)
+
+            // Bottom Circular Profile Image
             Box(
                 modifier = Modifier
-                    .size(180.dp)
+                    .size(170.dp)
                     .clip(CircleShape)
                     .background(Color.White),
                 contentAlignment = Alignment.Center
@@ -120,6 +127,7 @@ fun TugasLogin(modifier: Modifier = Modifier) {
                     modifier = Modifier.fillMaxSize()
                 )
             }
+
             Spacer(modifier = Modifier.height(2.dp))
         }
     }
