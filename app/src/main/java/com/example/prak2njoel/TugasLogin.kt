@@ -26,11 +26,10 @@ fun TugasLogin(modifier: Modifier = Modifier) {
     // 2. Gambar Putih Atas / Logo (Toplogo)
     val topLogoImage = painterResource(id = R.drawable.toplogo)
 
-    // Root Box menggunakan fillMaxSize() agar background menutupi seluruh layar (Edge-to-Edge sampai ke gambar baterai/status bar)
     Box(
         modifier = Modifier.fillMaxSize()
     ) {
-        // Background image full screen sampai ke atas
+        // Background image edge-to-edge
         Image(
             painter = bgImage,
             contentDescription = null,
@@ -45,22 +44,20 @@ fun TugasLogin(modifier: Modifier = Modifier) {
                 .background(Color.Black.copy(alpha = 0.6f))
         )
 
-        // Column konten diberi systemBarsPadding() agar teks/logo tidak tertutup status bar (baterai/jam) & navigation bar bawah
+        // Menggunakan Arrangement.spacedBy dengan jarak konsisten agar rapi dan tidak terlalu renggang
         Column(
             modifier = Modifier
                 .fillMaxSize()
                 .systemBarsPadding()
-                .padding(horizontal = 24.dp, vertical = 12.dp),
+                .padding(horizontal = 24.dp, vertical = 24.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.SpaceBetween
+            verticalArrangement = Arrangement.spacedBy(16.dp, Alignment.Top)
         ) {
-            Spacer(modifier = Modifier.height(2.dp))
-
             // Header: Login & Subtitle
             Column(horizontalAlignment = Alignment.CenterHorizontally) {
                 Text(
                     text = "Login",
-                    fontSize = 34.sp,
+                    fontSize = 32.sp,
                     fontWeight = FontWeight.Bold,
                     color = Color(0xFF42A5F5)
                 )
@@ -72,10 +69,10 @@ fun TugasLogin(modifier: Modifier = Modifier) {
                 )
             }
 
-            // Logo / Gambar Putih Atas
+            // Logo / Gambar Putih Atas (Toplogo)
             Box(
                 modifier = Modifier
-                    .size(110.dp)
+                    .size(105.dp)
                     .clip(CircleShape)
                     .background(Color.White),
                 contentAlignment = Alignment.Center
@@ -112,7 +109,10 @@ fun TugasLogin(modifier: Modifier = Modifier) {
                 )
             }
 
-            // Bottom Circular Profile Image
+            // Spacer khusus untuk mengatur jarak turun foto profil tanpa membuat elemen atas renggang
+            Spacer(modifier = Modifier.height(12.dp))
+
+            // Bottom Circular Profile Image (Besar dan rapi di bawah)
             Box(
                 modifier = Modifier
                     .size(170.dp)
@@ -127,8 +127,6 @@ fun TugasLogin(modifier: Modifier = Modifier) {
                     modifier = Modifier.fillMaxSize()
                 )
             }
-
-            Spacer(modifier = Modifier.height(2.dp))
         }
     }
 }
