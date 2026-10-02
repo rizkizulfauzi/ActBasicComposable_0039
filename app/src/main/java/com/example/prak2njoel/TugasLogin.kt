@@ -18,5 +18,11 @@ import androidx.compose.ui.unit.sp
 
 @Composable
 fun TugasLogin(modifier: Modifier = Modifier) {
+    val bgImage = painterResource(id = R.drawable.background)
 
+    // 1. Gambar Profil Bawah
+    val profileImage = painterResource(id = R.drawable.profilku)
+
+    // 2. Gambar Putih Atas / Logo (Toplogo)
+    val topLogoImage = painterResource(id = R.drawable.toplogo)
 }
