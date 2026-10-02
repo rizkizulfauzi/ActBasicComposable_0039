@@ -20,9 +20,9 @@ class MainActivity : ComponentActivity() {
         setContent {
             Prak2njoelTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    TataletakBoxColumnRow(
-                        modifier = Modifier.padding(innerPadding)
-                    )
+                    TugasLogin(
+                        modifier = Modifier.padding(innerPadding) )
+
                 }
             }
         }
