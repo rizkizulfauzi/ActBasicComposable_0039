@@ -43,4 +43,12 @@ fun TugasLogin(modifier: Modifier = Modifier) {
                 .fillMaxSize()
                 .background(Color.Black.copy(alpha = 0.6f))
         )
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(horizontal = 24.dp, vertical = 12.dp),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.SpaceBetween
+        ) {
+            Spacer(modifier = Modifier.height(2.dp))
 }
