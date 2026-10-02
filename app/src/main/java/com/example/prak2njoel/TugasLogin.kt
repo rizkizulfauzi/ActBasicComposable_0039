@@ -82,4 +82,28 @@ fun TugasLogin(modifier: Modifier = Modifier) {
                     modifier = Modifier.fillMaxSize()
                 )
             }
+            // User Info: Nama & NIM
+            Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                Text(
+                    text = "Nama",
+                    fontSize = 14.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = Color(0xFFFF5252)
+                )
+                Spacer(modifier = Modifier.height(1.dp))
+                Text(
+                    text = "Muhammad Rizki Zulfauzi",
+                    fontSize = 18.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = Color(0xFF64B5F6)
+                )
+                Spacer(modifier = Modifier.height(1.dp))
+                Text(
+                    text = "20240140039",
+                    fontSize = 16.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = Color.White
+                )
+            }
+
         }
