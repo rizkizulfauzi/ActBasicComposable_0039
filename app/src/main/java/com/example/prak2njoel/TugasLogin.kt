@@ -25,4 +25,16 @@ fun TugasLogin(modifier: Modifier = Modifier) {
 
     // 2. Gambar Putih Atas / Logo (Toplogo)
     val topLogoImage = painterResource(id = R.drawable.toplogo)
+
+    Box(
+        modifier = modifier
+            .fillMaxSize()
+    ) {
+        // Background image
+        Image(
+            painter = bgImage,
+            contentDescription = null,
+            contentScale = ContentScale.Crop,
+            modifier = Modifier.fillMaxSize()
+        )
 }
