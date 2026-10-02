@@ -120,6 +120,8 @@ fun TugasLogin(modifier: Modifier = Modifier) {
                     modifier = Modifier.fillMaxSize()
                 )
             }
-
-
+            Spacer(modifier = Modifier.height(2.dp))
         }
+    }
+}
+
