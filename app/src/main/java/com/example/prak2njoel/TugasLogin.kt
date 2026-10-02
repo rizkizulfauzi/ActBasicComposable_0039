@@ -51,4 +51,20 @@ fun TugasLogin(modifier: Modifier = Modifier) {
             verticalArrangement = Arrangement.SpaceBetween
         ) {
             Spacer(modifier = Modifier.height(2.dp))
-}
+
+            // Header: Login & Subtitle
+            Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                Text(
+                    text = "Login",
+                    fontSize = 34.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = Color(0xFF42A5F5)
+                )
+                Spacer(modifier = Modifier.height(2.dp))
+                Text(
+                    text = "Ini adalah halaman login,",
+                    fontSize = 13.sp,
+                    color = Color.LightGray
+                )
+            }
+        }
